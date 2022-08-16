@@ -1,5 +1,13 @@
 class User:
-    pass
+    # 인사 메세지 출력 메소드
+    def say_hello(self):
+        print(f"안녕하세요! 저는 {self.name} 입니다!")
+
+    def login(self, my_email, my_password):
+        if(self.email == my_email and self.password == my_password):
+            print("로그인 성공")
+        else:
+            print("로그인 실패")
 
 # 인스턴스
 user1 = User()
@@ -23,3 +31,12 @@ user3.password = "JAVA"
 print(user1.email)
 print(user2.password)
 print(user3.name)
+
+# 클래스 메소드 호출
+User.say_hello(user1)
+
+# 인스턴스에 메소드 호출
+user2.say_hello()
+
+# 자동으로 1번째 파라미터 전달됨.
+user3.login("JAVA", "JAVA")
