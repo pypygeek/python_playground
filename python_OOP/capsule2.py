@@ -22,14 +22,22 @@ class Person:
         """ 주민 정보를 문자열로 리턴하는 메소드 """
         return self.name + "씨는 " + str(self.__age) + "살입니다!"
 
+    @property
     def get_age(self):
-        return self.__age
+        print("나이를 리턴합니다.")
+        return self._age
 
+    @age.setter
     def set_age(self, value):
-        self.__age = value
+        print("나이를 설정합니다.")
+        if value < 0:
+            print("나이눈 0보다 작을 수 없습니다. 기본 값 0으로 설정합니다.")
+            self._age = 0
+        else:
+            self._age = value
 
 young = Person("name", 18, "1234567")
-print(young.get_age())
+print(young.age)
 
 young.set_age(23)
-print(young.get_age())
+print(young.age)
