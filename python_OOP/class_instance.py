@@ -9,6 +9,9 @@ class User:
         else:
             print("로그인 실패")
 
+    def check_name(self, name):
+        return self.name == name
+
 # 인스턴스
 user1 = User()
 user2 = User()
@@ -40,3 +43,5 @@ user2.say_hello()
 
 # 자동으로 1번째 파라미터 전달됨.
 user3.login("JAVA", "JAVA")
+
+print(user1.check_name("GO"))
